@@ -1,4 +1,4 @@
-![Build Status](https://github.com/YOUR_GITHUB_USERNAME/learn-cicd-typescript-starter/actions/workflows/ci.yml/badge.svg)
+![Build Status](https://github.com/Incarnatedc/learn-cicd-typescript-starter/actions/workflows/ci.yml/badge.svg)
 
 # learn-cicd-typescript-starter (Notely)
 
