@@ -13,7 +13,7 @@ describe("getAPIKey", () => {
 
   test("returns null if the authorization header is missing", () => {
     const headers: IncomingHttpHeaders = {
-      "host": "localhost"
+      host: "localhost",
     };
 
     expect(getAPIKey(headers)).toBeNull();
