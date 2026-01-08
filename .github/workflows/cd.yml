@@ -24,19 +24,16 @@ jobs:
       - name: Build the code
         run: npm run build
 
-      - name: Google Auth
-        id: auth
+      - id: auth
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GCP_CREDENTIALS }}
 
-      - name: 'Set up Cloud SDK'
-        uses: 'google-github-actions/setup-gcloud@v3'
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
 
-      - name: 'Use gcloud CLI'
-        run: 'gcloud info'
+      - name: Use gcloud CLI
+        run: gcloud info
 
-      - name: Build and Push Docker Image
-        run: |
-          docker build -t us-central1-docker.pkg.dev/ace-sequencer-483703-k0/notely-ar-repo/notely:latest .
-          docker push us-central1-docker.pkg.dev/ace-sequencer-483703-k0/notely-ar-repo/notely:latest
+      - name: Build and push Docker image
+        run: gcloud builds submit --tag us-central1-docker.pkg.dev/ace-sequencer-483703-k0/notely-ar-repo/notely:latest .
