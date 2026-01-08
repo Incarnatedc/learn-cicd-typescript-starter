@@ -29,6 +29,7 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+
       - name: 'Set up Cloud SDK'
         uses: 'google-github-actions/setup-gcloud@v3'
 
@@ -37,5 +38,5 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build -t us-central1-docker.pkg.dev/ace-sequencer-483703-k0/notely-ar-repo/notely-app:latest .
-          docker push us-central1-docker.pkg.dev/ace-sequencer-483703-k0/notely-ar-repo/notely-app:latest
+          docker build -t us-central1-docker.pkg.dev/ace-sequencer-483703-k0/notely-ar-repo/notely:latest .
+          docker push us-central1-docker.pkg.dev/ace-sequencer-483703-k0/notely-ar-repo/notely:latest
